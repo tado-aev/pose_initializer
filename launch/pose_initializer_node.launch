@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="plane" default="10" />
+  <arg name="num_samples" default="50" />
+  <arg name="cov_threshold" default="0.95" />
+  <arg name="move_distance" default="5" />
+  <arg name="write_to_file" default="true" />
+
+  <node pkg="pose_initializer" type="pose_initializer_node.py" name="pose_initializer" >
+    <param name="plane" value="$(arg plane)" />
+    <param name="num_samples" value="$(arg num_samples)" />
+    <param name="cov_threshold" value="$(arg cov_threshold)" />
+    <param name="move_distance" value="$(arg move_distance)" />
+    <param name="write_to_file" value="$(arg write_to_file)" />
+  </node>
+</launch>
